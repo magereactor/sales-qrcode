@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <block name="magereactor_salesqrcode" template="MageReactor_SalesQRCode::sales/order/view/qr_code.phtml" ifconfig="salesqrcode/general/enabled">
+            <arguments>
+                <argument name="qr_code_view_model" xsi:type="object">MageReactor\SalesQRCode\ViewModel\SalesQR</argument>
+            </arguments>
+        </block>
+        <move element="magereactor_salesqrcode" destination="content" before="sales.order.info.links"/>
+    </body>
+</page>

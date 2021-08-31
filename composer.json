@@ -1,0 +1,45 @@
+{
+    "name": "magereactor/sales-qrcode",
+    "description": "MageReactor Magento 2 SalesQRCode Extension",
+    "type": "magento2-module",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "MageReactor",
+            "homepage": "https://www.magereactor.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5",
+        "magereactor/base": "1.0.0"
+    },
+    "keywords": [
+        "qrcode",
+        "qr code",
+        "magento2qrcode",
+        "magento 2 qr code",
+        "magento2salesqrcode",
+        "magento 2 sales qrcode",
+        "magento2orderqrcode",
+        "magento 2 order qrcode"
+    ],
+
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "MageReactor\\SalesQrCode\\": ""
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        }
+    ]
+}
