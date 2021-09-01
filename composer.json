@@ -25,7 +25,6 @@
         "magento2orderqrcode",
         "magento 2 order qrcode"
     ],
-
     "autoload": {
         "files": [
             "registration.php"
