@@ -39,7 +39,7 @@
     "repositories": [
         {
             "type": "composer",
-            "url": "https://repo.magento.com/"
+            "url": "https://github.com/magereactor/sales-qrcode"
         }
     ]
 }
