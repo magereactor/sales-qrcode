@@ -5,6 +5,7 @@ use Magento\Framework\View\Element\Block\ArgumentInterface;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Store\Model\ScopeInterface;
 use Magento\Framework\UrlInterface;
+use Magento\Sales\Model\OrderRepositoryFactory;
 
 class SalesQR implements ArgumentInterface
 {
@@ -23,16 +24,20 @@ class SalesQR implements ArgumentInterface
      */
     protected $scopeConfig;
 
+    protected $orderRepository;
+
     /**
      * SalesQR constructor.
      * @param ScopeConfigInterface $scopeConfig
      */
     public function __construct(
         UrlInterface $url,
-        ScopeConfigInterface $scopeConfig
+        ScopeConfigInterface $scopeConfig,
+        OrderRepositoryFactory $orderRepository
     ){
         $this->url = $url;
         $this->scopeConfig = $scopeConfig;
+        $this->orderRepository = $orderRepository->create();
     }
 
     public function getGeneralConfig($field, $storeId = null)
@@ -55,6 +60,12 @@ class SalesQR implements ArgumentInterface
             return $this->url->getUrl('sales/order/view', array('order_id' => $data));
         } elseif($this->getGeneralConfig('qr_data') == self::ORDER_PRINT_URL) {
             return $this->url->getUrl('sales/order/print', array('order_id' => $data));
+        }
+
+        try {
+            $data = $this->orderRepository->get($data)->getIncrementId();
+        } catch(\Exception $e) {
+            return null;
         }
         return $data;
     }
