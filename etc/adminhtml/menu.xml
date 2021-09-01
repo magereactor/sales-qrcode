@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add
+            id="MageReactor_SalesQRCode::sales_qrcode"
+            title="Sales QRCode"
+            translate="title"
+            module="MageReactor_SalesQRCode"
+            sortOrder="0"
+            parent="MageReactor_Base::main"
+            resource="MageReactor_SalesQRCode::sales_qrcode"/>
+
+        <add
+            id="MageReactor_SalesQRCode::sales_qrcode_settings"
+            title="Sales QRCode Config"
+            translate="title"
+            module="MageReactor_SalesQRCode"
+            sortOrder="0"
+            parent="MageReactor_SalesQRCode::sales_qrcode"
+            action="admin/system_config/edit/section/salesqrcode"
+            resource="MageReactor_SalesQRCode::sales_qrcode_settings"/>
+    </menu>
+</config>
