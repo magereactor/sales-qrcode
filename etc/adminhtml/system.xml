@@ -14,14 +14,14 @@
                 <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Enabled</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                    <depends>
-                        <field id="salesqrcode/general/enabled">1</field>
-                    </depends>
                 </field>
 
                 <field id="qr_data" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>QRCode Data</label>
                     <source_model>MageReactor\SalesQRCode\Model\Config\Source\Data</source_model>
+                    <depends>
+                        <field id="salesqrcode/general/enabled">1</field>
+                    </depends>
                     <comment><![CDATA[Default value is order Increment ID]]></comment>
                 </field>
 
