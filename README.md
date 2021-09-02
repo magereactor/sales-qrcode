@@ -30,6 +30,7 @@ The package comes with the MageReactor_Base module. This Base module contains ne
 php bin/magento module:enable MageReactor_Base
 php bin/magento module:enable MageReactor_SalesQRCode
 php bin/magento setup:upgrade
+php bin/magento setup:di:compile
 php bin/magento setup:static-content:deploy -f
 ```
 
